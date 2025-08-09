@@ -1,0 +1,38 @@
+---
+import { cn } from '@/utils/utils';
+import type { HTMLAttributes } from 'astro/types';
+import Link from './Link.astro';
+
+type Props = {
+  variant?: 'primary';
+  size?: 'sm' | 'base';
+  class?: string;
+} & (
+  | ({ as: 'a' } & Partial<HTMLAttributes<'a'>>)
+  | ({ as?: 'button' } & Partial<HTMLAttributes<'button'>>)
+);
+
+const {
+  as = 'button',
+  variant = 'primary',
+  size = 'base',
+  class: className,
+  ...rest
+} = Astro.props;
+
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+const Component = as === 'a' ? Link : 'button';
+---
+
+<Component
+  class={cn(
+    'inline-flex items-center justify-center rounded text-nowrap',
+    variant === 'primary' && 'bg-primary text-primary-foreground',
+    size === 'sm' && 'rounded-full px-3 py-2 text-sm font-normal',
+    size === 'base' && 'px-6 py-3 text-base font-medium',
+    className,
+  )}
+  {...rest as any}
+>
+  <slot />
+</Component>

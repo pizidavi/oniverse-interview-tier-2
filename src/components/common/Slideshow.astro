@@ -1,0 +1,18 @@
+---
+import { cn } from '@/utils/utils';
+
+type Props = {
+  class?: string;
+};
+
+const { class: className } = Astro.props;
+---
+
+<div
+  class={cn(
+    'grid auto-cols-[100%] grid-flow-col gap-4 overflow-x-auto px-20 pb-2 sm:auto-cols-[50%] lg:auto-cols-[33.33%] xl:auto-cols-[25%]',
+    className,
+  )}
+>
+  <slot />
+</div>

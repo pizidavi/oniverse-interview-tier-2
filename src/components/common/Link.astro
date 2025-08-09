@@ -1,0 +1,19 @@
+---
+import { cn } from '@/utils/utils';
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = {
+  href: string;
+} & Omit<Partial<HTMLAttributes<'a'>>, 'href'>;
+
+const { class: className, href, target, ...rest } = Astro.props;
+---
+
+<a
+  href={href}
+  class={cn('inline-flex items-center justify-center rounded-full text-nowrap', className)}
+  target={target ?? (href.startsWith('http') ? '_blank' : undefined)}
+  {...rest}
+>
+  <slot />
+</a>

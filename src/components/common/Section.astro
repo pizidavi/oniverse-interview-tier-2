@@ -1,0 +1,13 @@
+---
+import { cn } from '@/utils/utils';
+
+type Props = {
+  class?: string;
+};
+
+const { class: className } = Astro.props;
+---
+
+<section class={cn('relative flex flex-col', className)}>
+  <slot />
+</section>

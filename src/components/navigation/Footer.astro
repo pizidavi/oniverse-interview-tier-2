@@ -1,0 +1,28 @@
+---
+import PardoLogo from '@/assets/pardo-logo.svg';
+import Facebook from '@/components/icon/Facebook.astro';
+import Instagram from '@/components/icon/Instagram.astro';
+import Link from '@/components/common/Link.astro';
+---
+
+<footer class='bg-primary text-primary-foreground flex flex-col gap-y-20 px-20 py-20'>
+  <div class='grid grid-cols-2 gap-8 lg:grid-cols-3'>
+    <div class='col-span-2'>
+      <div class='flex flex-row gap-x-4'>
+        <Link href='https://www.facebook.com/pardoyachts/'>
+          <Facebook class='fill-background h-6 w-6' />
+        </Link>
+        <Link href='https://www.instagram.com/pardoyachts/'>
+          <Instagram class='fill-background h-6 w-6' />
+        </Link>
+      </div>
+    </div>
+    <div class='hidden lg:block'>
+      <PardoLogo class='h-16 w-auto' />
+    </div>
+  </div>
+  <p class='text-muted mt-2 text-center text-sm'>
+    ©2025 CANTIERE DEL PARDO S.p.A. • ITALY • P.IVA 03869300404 • Cap. Soc. € 5.261.600,00 i.v. •
+    All Rights Reserved
+  </p>
+</footer>

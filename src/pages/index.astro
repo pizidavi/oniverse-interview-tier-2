@@ -1,0 +1,161 @@
+---
+import Card from '@/components/common/Card.astro';
+import Header from '@/components/navigation/Header.astro';
+import Section from '@/components/common/Section.astro';
+import Layout from '@/layouts/Layout.astro';
+import Slideshow from '@/components/common/Slideshow.astro';
+import { __DEV__, CONTACT_URL } from '@/config/constants';
+import Button from '@/components/common/Button.astro';
+import { Image } from 'astro:assets';
+
+const product = {
+  name: 'Pardo E72',
+  model: 'E72',
+};
+---
+
+<Layout title={product.model}>
+  <Header />
+  <main class='relative'>
+    <Section class='h-[100dvh]'>
+      <video
+        autoplay={!__DEV__}
+        playsinline
+        muted
+        loop
+        class='absolute inset-0 h-full w-full object-cover'
+        preload='metadata'
+        poster='https://pardoyachts.com/cdn/shop/files/preview_images/5ebac490117e490cb7dc40ce1fa18ccf.thumbnail.0000000000_small.jpg?v=1736705026'
+      >
+        <source
+          src='https://pardoyachts.com/cdn/shop/videos/c/vp/5ebac490117e490cb7dc40ce1fa18ccf/5ebac490117e490cb7dc40ce1fa18ccf.HD-1080p-2.5Mbps-40882598.mp4?v=0'
+          type='video/mp4'
+        />
+      </video>
+      <div class='z-10 flex h-full flex-col items-center justify-center p-4 text-center sm:p-5'>
+        <h1 class='text-7xl font-bold text-balance text-white'>
+          Scopri il nuovo<br />
+          <span class='text-[110%]'>{product.name}</span>
+        </h1>
+      </div>
+    </Section>
+    <Section class='gap-y-6 py-12 md:gap-y-10 md:py-16'>
+      <h2 class='text-center text-3xl font-bold'>Features</h2>
+      <Slideshow>
+        <Card>
+          <h3 class='text-xl font-bold'>Comfort</h3>
+          <p>Spacious interiors with luxurious finishes.</p>
+        </Card>
+        <Card>
+          <h3 class='text-xl font-bold'>Performance</h3>
+          <p>Equipped with the latest technology for an unparalleled experience.</p>
+        </Card>
+        <Card>
+          <h3 class='text-xl font-bold'>Design</h3>
+          <p>Sleek lines and modern aesthetics that turn heads.</p>
+        </Card>
+        <Card>
+          <h3 class='text-xl font-bold'>Safety</h3>
+          <p>Advanced safety features for peace of mind on the water.</p>
+        </Card>
+        <Card>
+          <h3 class='text-xl font-bold'>Sustainability</h3>
+          <p>Eco-friendly materials and energy-efficient systems.</p>
+        </Card>
+      </Slideshow>
+    </Section>
+    <Section class='mx-20 gap-y-6 py-12 md:gap-y-10 md:py-16'>
+      <div class='bg-muted flex flex-col gap-4 rounded p-10 text-center tracking-wide'>
+        <h5 class='text-5xl font-medium'>Più spazi, più comfort, più vita nel blu.</h5>
+        <p class='text-4xl'>Ispirato all'immensità del mare, per infiniti paesaggi da esplorare.</p>
+      </div>
+      <div class='flex items-center justify-center'>
+        <Button as='a' href={CONTACT_URL}>Richiedi informazioni</Button>
+      </div>
+    </Section>
+    <Section class='gap-y-6 py-12 md:gap-y-10 md:py-16'>
+      <h2 class='text-center text-3xl font-bold'>Galleria</h2>
+      <Slideshow class='px-0 lg:auto-cols-[50%] xl:auto-cols-[50%]'>
+        <Image
+          src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_exterior_desktop_001_b.jpg?v=1737108915'
+          alt='Image of Pardo E72 from overhead vertical'
+          width={1920}
+          height={1080}
+        />
+        <Image
+          src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_exterior_desktop_004.jpg?v=1736085598'
+          alt='Image of Pardo E72 from overhead horizontal'
+          width={1920}
+          height={1080}
+        />
+        <Image
+          src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_exterior_desktop_005.jpg?v=1736085687'
+          alt='Image of Pardo E72 from behind horizontal'
+          width={2520}
+          height={1080}
+        />
+        <Image
+          src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_exterior_desktop_003.jpg?v=1736085598'
+          alt='Image of Pardo E72 from overhead zoomed in'
+          width={1920}
+          height={1080}
+        />
+        <Image
+          src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_exterior_desktop_002.jpg?v=1736085598'
+          alt='Image of Pardo E72 front from overhead zoomed in'
+          width={1920}
+          height={1080}
+        />
+      </Slideshow>
+      <Slideshow class='px-0 lg:auto-cols-[50%] xl:auto-cols-[50%]'>
+        <Image
+          src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_interior_desktop_001.jpg?v=1736085966'
+          alt='Image of Pardo E72 interior'
+          width={1920}
+          height={1080}
+        />
+        <Image
+          src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_interior_desktop_004.jpg?v=1736085965'
+          alt='Image of Pardo E72 interior'
+          width={1920}
+          height={1080}
+        />
+        <Image
+          src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_interior_desktop_007.jpg?v=1736085965'
+          alt='Image of Pardo E72 central command station'
+          width={1920}
+          height={1080}
+        />
+        <Image
+          src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_interior_desktop_008.jpg?v=1736085967'
+          alt='Image of Pardo E72 interior bedroom'
+          width={1920}
+          height={1080}
+        />
+        <Image
+          src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_interior_desktop_011.jpg?v=1736085966'
+          alt='Image of Pardo E72 interior bathroom'
+          width={1920}
+          height={1080}
+        />
+      </Slideshow>
+    </Section>
+    <Section class='mx-20 gap-y-6 py-12 md:gap-y-10 md:py-16'>
+      <h2 class='text-center text-3xl font-bold'>Scheda tecnica</h2>
+      <div class='grid grid-cols-2 gap-8 lg:grid-cols-3'>
+        <div class='col-span-2'>
+          <!-- Scheda tecnica -->
+        </div>
+        <div class='hidden lg:block'>
+          <Image
+            src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_exterior_desktop_001_b.jpg?v=1737108915'
+            alt='Pardo E72 Technical'
+            class='rounded'
+            width={1920}
+            height={1080}
+          />
+        </div>
+      </div>
+    </Section>
+  </main>
+</Layout>
