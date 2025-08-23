@@ -1,6 +1,6 @@
 ---
 import '@/assets/global.css';
-import { APP_TITLE } from '@/config/constants';
+import { BASE_URL, APP_TITLE } from '@/config/constants';
 import Footer from '@/components/navigation/Footer.astro';
 
 type Props = {
@@ -18,7 +18,7 @@ const pageTitle = title ? `${title} - ${APP_TITLE}` : APP_TITLE;
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+    <link rel='icon' type='image/x-icon' href={BASE_URL + '/favicon.ico'} />
 
     <title>{pageTitle}</title>
   </head>
