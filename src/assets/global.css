@@ -18,8 +18,6 @@
   --ring: oklch(0.708 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
   --radius: 0.625rem;
 }
 
@@ -41,8 +39,6 @@
   --ring: oklch(0.439 0 0);
   --card: oklch(0.145 0 0);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
   color-scheme: dark;
 } */
 
@@ -64,8 +60,6 @@
   --color-ring: var(--ring);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius: var(--radius);

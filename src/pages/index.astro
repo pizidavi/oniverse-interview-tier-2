@@ -40,28 +40,33 @@ const product = {
       </div>
     </Section>
     <Section>
-      <h2 class='text-center'>Features</h2>
+      <h2 class='text-center'>Novità</h2>
       <Slideshow paddingHorizontal>
-        <Card>
-          <h3>Comfort</h3>
-          <p>Spacious interiors with luxurious finishes.</p>
-        </Card>
-        <Card>
-          <h3>Performance</h3>
-          <p>Equipped with the latest technology for an unparalleled experience.</p>
-        </Card>
-        <Card>
-          <h3>Design</h3>
-          <p>Sleek lines and modern aesthetics that turn heads.</p>
-        </Card>
-        <Card>
-          <h3>Safety</h3>
-          <p>Advanced safety features for peace of mind on the water.</p>
-        </Card>
-        <Card>
-          <h3>Sustainability</h3>
-          <p>Eco-friendly materials and energy-efficient systems.</p>
-        </Card>
+        <Card
+          title='Comfort'
+          description='Endurance 72 è pensata per lunghe navigazioni: comfort inedito, indoor e outdoor, autonomia e consumi contenuti.'
+          image='https://pardoyachts.com/cdn/shop/files/a1.jpg?v=1736898209'
+        />
+        <Card
+          title='Efficienza'
+          description='Progettata per navigare a lungo, in dislocamento o planata. Eco-speed e design ottimizzato per massima efficienza e bassi consumi.'
+          image='https://pardoyachts.com/cdn/shop/files/h-1-3-a1.jpg?v=1736899201'
+        />
+        <Card
+          title='Silenziosità'
+          description='Crociera silenziosa grazie a soluzioni costruttive e propulsione avanzata.'
+          image='https://pardoyachts.com/cdn/shop/articles/sardinia_12971e7d-de7f-4478-a869-187a9a833c42.jpg?v=1747828381'
+        />
+        <Card
+          title='Ibrido'
+          description='Predisposizione per motorizzazione ibrida: sostenibilità già nel progetto.'
+          image='https://pardoyachts.com/cdn/shop/articles/News_-_PARDO_x_Seaspice_desktop_e1590f25-6dee-4860-9a1d-8c4501cbaced.jpg?v=1754311186'
+        />
+        <Card
+          title='Design'
+          description="Prua inversa e linee filanti: l'identità Pardo in ogni dettaglio."
+          image='https://pardoyachts.com/cdn/shop/files/p38_ok.jpg?v=1736898052'
+        />
       </Slideshow>
     </Section>
     <Section marginHorizontal>
@@ -157,6 +162,9 @@ const product = {
             height={1080}
           />
         </div>
+      </div>
+      <div class='flex items-center justify-center'>
+        <Button as='a' href={CONTACT_URL}>Richiedi informazioni</Button>
       </div>
     </Section>
   </main>
