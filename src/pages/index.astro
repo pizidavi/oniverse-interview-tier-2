@@ -17,7 +17,7 @@ const product = {
 <Layout title={product.model}>
   <Header />
   <main class='relative'>
-    <Section class='h-[100dvh]'>
+    <Section class='h-[100svh]'>
       <video
         autoplay={!__DEV__}
         playsinline
@@ -33,49 +33,51 @@ const product = {
         />
       </video>
       <div class='z-10 flex h-full flex-col items-center justify-center p-4 text-center sm:p-5'>
-        <h1 class='text-7xl font-bold text-balance text-white'>
+        <h1 class='text-white'>
           Scopri il nuovo<br />
           <span class='text-[110%]'>{product.name}</span>
         </h1>
       </div>
     </Section>
-    <Section class='gap-y-6 py-12 md:gap-y-10 md:py-16'>
-      <h2 class='text-center text-3xl font-bold'>Features</h2>
-      <Slideshow>
+    <Section>
+      <h2 class='text-center'>Features</h2>
+      <Slideshow paddingHorizontal>
         <Card>
-          <h3 class='text-xl font-bold'>Comfort</h3>
+          <h3>Comfort</h3>
           <p>Spacious interiors with luxurious finishes.</p>
         </Card>
         <Card>
-          <h3 class='text-xl font-bold'>Performance</h3>
+          <h3>Performance</h3>
           <p>Equipped with the latest technology for an unparalleled experience.</p>
         </Card>
         <Card>
-          <h3 class='text-xl font-bold'>Design</h3>
+          <h3>Design</h3>
           <p>Sleek lines and modern aesthetics that turn heads.</p>
         </Card>
         <Card>
-          <h3 class='text-xl font-bold'>Safety</h3>
+          <h3>Safety</h3>
           <p>Advanced safety features for peace of mind on the water.</p>
         </Card>
         <Card>
-          <h3 class='text-xl font-bold'>Sustainability</h3>
+          <h3>Sustainability</h3>
           <p>Eco-friendly materials and energy-efficient systems.</p>
         </Card>
       </Slideshow>
     </Section>
-    <Section class='mx-20 gap-y-6 py-12 md:gap-y-10 md:py-16'>
+    <Section marginHorizontal>
       <div class='bg-muted flex flex-col gap-4 rounded p-10 text-center tracking-wide'>
-        <h5 class='text-5xl font-medium'>Più spazi, più comfort, più vita nel blu.</h5>
-        <p class='text-4xl'>Ispirato all'immensità del mare, per infiniti paesaggi da esplorare.</p>
+        <h5 class='text-3xl font-medium lg:text-5xl'>Più spazi, più comfort, più vita nel blu.</h5>
+        <p class='text-xl lg:text-4xl'>
+          Ispirato all'immensità del mare, per infiniti paesaggi da esplorare.
+        </p>
       </div>
       <div class='flex items-center justify-center'>
         <Button as='a' href={CONTACT_URL}>Richiedi informazioni</Button>
       </div>
     </Section>
-    <Section class='gap-y-6 py-12 md:gap-y-10 md:py-16'>
-      <h2 class='text-center text-3xl font-bold'>Galleria</h2>
-      <Slideshow class='px-0 lg:auto-cols-[50%] xl:auto-cols-[50%]'>
+    <Section>
+      <h2 class='text-center'>Galleria</h2>
+      <Slideshow class='lg:auto-cols-[50%] xl:auto-cols-[50%]'>
         <Image
           src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_exterior_desktop_001_b.jpg?v=1737108915'
           alt='Image of Pardo E72 from overhead vertical'
@@ -91,7 +93,7 @@ const product = {
         <Image
           src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_exterior_desktop_005.jpg?v=1736085687'
           alt='Image of Pardo E72 from behind horizontal'
-          width={2520}
+          width={1920}
           height={1080}
         />
         <Image
@@ -107,7 +109,7 @@ const product = {
           height={1080}
         />
       </Slideshow>
-      <Slideshow class='px-0 lg:auto-cols-[50%] xl:auto-cols-[50%]'>
+      <Slideshow class='lg:auto-cols-[50%] xl:auto-cols-[50%]'>
         <Image
           src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_interior_desktop_001.jpg?v=1736085966'
           alt='Image of Pardo E72 interior'
@@ -140,8 +142,8 @@ const product = {
         />
       </Slideshow>
     </Section>
-    <Section class='mx-20 gap-y-6 py-12 md:gap-y-10 md:py-16'>
-      <h2 class='text-center text-3xl font-bold'>Scheda tecnica</h2>
+    <Section marginHorizontal>
+      <h2 class='text-center'>Scheda tecnica</h2>
       <div class='grid grid-cols-2 gap-8 lg:grid-cols-3'>
         <div class='col-span-2'>
           <!-- Scheda tecnica -->

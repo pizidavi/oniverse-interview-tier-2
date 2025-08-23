@@ -3,11 +3,18 @@ import { cn } from '@/utils/utils';
 
 type Props = {
   class?: string;
+  marginHorizontal?: boolean;
 };
 
-const { class: className } = Astro.props;
+const { class: className, marginHorizontal = false } = Astro.props;
 ---
 
-<section class={cn('relative flex flex-col', className)}>
+<section
+  class={cn(
+    'relative flex flex-col gap-y-6 py-12 md:gap-y-10 md:py-16',
+    marginHorizontal && 'mx-4 lg:mx-20',
+    className,
+  )}
+>
   <slot />
 </section>

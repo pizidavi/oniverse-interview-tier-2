@@ -22,8 +22,8 @@ const pageTitle = title ? `${title} - ${APP_TITLE}` : APP_TITLE;
 
     <title>{pageTitle}</title>
   </head>
-  <body>
-    <div class='relative flex h-[100dvh] w-full flex-col'>
+  <body style='overflow: hidden;'>
+    <div class='relative flex h-[100svh] w-full flex-col' style='overflow-y: auto;'>
       <slot />
       <Footer />
     </div>
