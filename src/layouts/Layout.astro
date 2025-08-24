@@ -5,19 +5,42 @@ import Footer from '@/components/navigation/Footer.astro';
 
 type Props = {
   title?: string;
+  description?: string;
+  image?: string;
 };
 
-const { title } = Astro.props;
+const { title, description, image } = Astro.props;
 
 const pageTitle = title ? `${title} - ${APP_TITLE}` : APP_TITLE;
+const pageDescription = description ?? '';
+
+// SEO
+const canonical = Astro.url.href.split('?')[0];
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang='it'>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
+    <meta name='description' content={pageDescription} />
+
+    <!-- Open Graph -->
+    <meta property='og:type' content='website' />
+    <meta property='og:title' content={pageTitle} />
+    <meta property='og:description' content={pageDescription} />
+    <meta property='og:url' content={canonical} />
+    {image && <meta property='og:image' content={image} />}
+
+    <!-- Twitter -->
+    <meta name='twitter:card' content={image ? 'summary_large_image' : 'summary'} />
+    <meta name='twitter:title' content={pageTitle} />
+    <meta name='twitter:description' content={pageDescription} />
+    {image && <meta name='twitter:image' content={image} />}
+
     <meta name='generator' content={Astro.generator} />
+    <link rel='canonical' href={canonical} />
+
     <link rel='icon' type='image/x-icon' href={BASE_URL + '/favicon.ico'} />
 
     <title>{pageTitle}</title>

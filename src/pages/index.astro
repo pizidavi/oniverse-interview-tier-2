@@ -10,11 +10,14 @@ import { Image } from 'astro:assets';
 
 const product = {
   name: 'Pardo E72',
+  description: 'Il Pardo E72 è un yacht di lusso che combina prestazioni eccezionali e comfort.',
   model: 'E72',
+  image:
+    'https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_exterior_desktop_004.jpg?v=1736085598',
 };
 ---
 
-<Layout title={product.model}>
+<Layout title={product.model} description={product.description} image={product.image}>
   <Header />
   <main class='relative'>
     <Section class='h-[100svh]'>
