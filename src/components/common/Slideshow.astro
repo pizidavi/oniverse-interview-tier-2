@@ -12,7 +12,6 @@ const { class: className, paddingHorizontal = false } = Astro.props;
 <div
   class={cn(
     'grid auto-cols-[100%] grid-flow-col gap-4 overflow-x-auto pb-2 sm:auto-cols-[50%] lg:auto-cols-[33.33%] xl:auto-cols-[25%]',
-    '[&>*]:h-full [&>*]:object-cover',
     'snap-x [&>*]:snap-start',
     paddingHorizontal && 'scroll-px-4 px-4 lg:scroll-px-20 lg:px-20',
     className,

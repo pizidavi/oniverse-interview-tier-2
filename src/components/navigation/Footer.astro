@@ -3,11 +3,12 @@ import PardoLogo from '@/assets/pardo-logo.svg';
 import Facebook from '@/components/icon/Facebook.astro';
 import Instagram from '@/components/icon/Instagram.astro';
 import Link from '@/components/common/Link.astro';
+import { cn } from '@/utils/utils';
 ---
 
-<footer class='bg-primary text-primary-foreground flex flex-col gap-y-20 px-20 py-20'>
-  <div class='grid grid-cols-2 gap-8 lg:grid-cols-3'>
-    <div class='col-span-2'>
+<footer class='bg-primary text-primary-foreground flex flex-col gap-y-20 py-20'>
+  <div class={cn('grid grid-cols-2 gap-2 lg:grid-cols-3 lg:gap-8', 'mx-4 lg:mx-20')}>
+    <div class='lg:col-span-2'>
       <div class='flex flex-row gap-x-4'>
         <Link href='https://www.facebook.com/pardoyachts/'>
           <Facebook class='fill-background h-6 w-6' />
@@ -17,12 +18,12 @@ import Link from '@/components/common/Link.astro';
         </Link>
       </div>
     </div>
-    <div class='hidden lg:block'>
-      <PardoLogo class='h-16 w-auto' />
+    <div class='flex justify-end'>
+      <PardoLogo class='h-12 w-auto max-w-full md:h-16' />
     </div>
   </div>
-  <p class='text-muted text-center text-sm'>
-    ©2025 CANTIERE DEL PARDO S.p.A. • ITALY • P.IVA 03869300404 • Cap. Soc. € 5.261.600,00 i.v. •
-    All Rights Reserved
+  <p class='text-muted text-center text-xs md:text-sm'>
+    ©2025 CANTIERE DEL PARDO S.p.A. • ITALY • P.IVA 03869300404<br />
+    Cap. Soc. € 5.261.600,00 i.v. • All Rights Reserved
   </p>
 </footer>

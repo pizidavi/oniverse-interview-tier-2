@@ -1,20 +1,26 @@
 ---
+import { cn } from '@/utils/utils';
 import { Image } from 'astro:assets';
 
 type Props = {
-  title: string;
+  title?: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
+  class?: string;
 };
 
-const { title, description, image } = Astro.props;
+const { title, description, image, imageAlt, class: className = '' } = Astro.props;
 ---
 
 <div
-  class='bg-card text-card-foreground relative flex aspect-square overflow-hidden rounded p-5 shadow'
+  class={cn(
+    'bg-card text-card-foreground relative flex aspect-square overflow-hidden rounded p-5 shadow',
+    className,
+  )}
 >
   <div class='relative z-20 flex flex-col justify-end text-white'>
-    <h3>{title}</h3>
+    <h4>{title}</h4>
     {description && <p>{description}</p>}
   </div>
   {
@@ -22,12 +28,15 @@ const { title, description, image } = Astro.props;
       <div class='absolute inset-0 z-0'>
         <Image
           src={image}
-          alt={title}
+          alt={imageAlt ?? title ?? description ?? ''}
           width={300}
           height={200}
           class='h-full w-full object-cover'
         />
-        <div class='pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-transparent' />
+        <div
+          class='pointer-events-none absolute inset-0 z-10'
+          style='background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 40%);'
+        />
       </div>
     )
   }

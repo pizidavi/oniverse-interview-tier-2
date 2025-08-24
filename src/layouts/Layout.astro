@@ -2,6 +2,7 @@
 import '@/assets/global.css';
 import { BASE_URL, APP_TITLE } from '@/config/constants';
 import Footer from '@/components/navigation/Footer.astro';
+import Header from '@/components/navigation/Header.astro';
 
 type Props = {
   title?: string;
@@ -46,8 +47,11 @@ const canonical = Astro.url.href.split('?')[0];
     <title>{pageTitle}</title>
   </head>
   <body style='overflow: hidden;'>
-    <div class='relative flex h-[100svh] w-full flex-col' style='overflow-y: auto;'>
-      <slot />
+    <div class='relative flex h-[100svh] w-full flex-col scroll-smooth' style='overflow-y: auto;'>
+      <Header />
+      <main class='relative'>
+        <slot />
+      </main>
       <Footer />
     </div>
   </body>

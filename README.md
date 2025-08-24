@@ -1,4 +1,4 @@
-# ONIVERSE Project — Interview Tier 2
+# ONIVERSE Project - Interview Tier 2
 
 ## Getting started
 

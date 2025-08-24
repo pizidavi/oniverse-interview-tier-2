@@ -2,14 +2,16 @@
 import { cn } from '@/utils/utils';
 
 type Props = {
+  id?: string;
   class?: string;
   marginHorizontal?: boolean;
 };
 
-const { class: className, marginHorizontal = false } = Astro.props;
+const { id, class: className, marginHorizontal = false } = Astro.props;
 ---
 
 <section
+  id={id}
   class={cn(
     'relative flex flex-col gap-y-6 py-12 md:gap-y-10 md:py-16',
     marginHorizontal && 'mx-4 lg:mx-20',
