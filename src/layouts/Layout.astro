@@ -46,8 +46,8 @@ const canonical = Astro.url.href.split('?')[0];
 
     <title>{pageTitle}</title>
   </head>
-  <body style='overflow: hidden;'>
-    <div class='relative flex h-[100svh] w-full flex-col scroll-smooth' style='overflow-y: auto;'>
+  <body>
+    <div class='relative flex min-h-[100svh] w-full flex-col scroll-smooth'>
       <Header />
       <main class='relative'>
         <slot />

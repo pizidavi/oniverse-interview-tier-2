@@ -1,11 +1,12 @@
 ---
 import { Image } from 'astro:assets';
+import { __DEV__, CONTACT_URL } from '@/config/constants';
 import Card from '@/components/common/Card.astro';
 import Section from '@/components/common/Section.astro';
 import Layout from '@/layouts/Layout.astro';
 import Slideshow from '@/components/common/Slideshow.astro';
-import { __DEV__, CONTACT_URL } from '@/config/constants';
 import Button from '@/components/common/Button.astro';
+import TechnicalData from '@/components/features/TechnicalData.astro';
 
 const product = {
   name: 'Pardo E72',
@@ -43,7 +44,9 @@ const product = {
     </a>
   </Section>
   <Section id='news'>
-    <h2 class='text-center'>Novità</h2>
+    <a href='#news'>
+      <h2 class='text-center'>Novità</h2>
+    </a>
     <Slideshow paddingHorizontal>
       <Card
         title='Comfort'
@@ -84,8 +87,12 @@ const product = {
     </div>
   </Section>
   <Section id='gallery'>
-    <h2 class='text-center'>Galleria</h2>
-    <Slideshow class='lg:auto-cols-[50%] xl:auto-cols-[50%] [&>*]:rounded-none'>
+    <a href='#gallery'>
+      <h2 class='text-center'>Galleria</h2>
+    </a>
+    <Slideshow
+      class='lg:auto-cols-[50%] xl:auto-cols-[50%] [&>*]:rounded-none lg:[&>*]:text-[120%]'
+    >
       <Card
         description="Lo spazio abitabile sui ponti dell'E72 è straordinario, per un rapporto privilegiato con il mare."
         image='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_exterior_desktop_001_b.jpg?v=1737108915'
@@ -112,9 +119,11 @@ const product = {
         imageAlt='Image of Pardo E72 front from overhead zoomed in'
       />
     </Slideshow>
-    <Slideshow class='lg:auto-cols-[50%] xl:auto-cols-[50%] [&>*]:rounded-none'>
+    <Slideshow
+      class='lg:auto-cols-[50%] xl:auto-cols-[50%] [&>*]:rounded-none lg:[&>*]:text-[120%]'
+    >
       <Card
-        description='Tra food e living, il salone interno accoglie ogni momento di convivialità con un’atmosfera luminosa ed elegante.'
+        description="Tra food e living, il salone interno accoglie ogni momento di convivialità con un'atmosfera luminosa ed elegante."
         image='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_interior_desktop_001.jpg?v=1736085966'
         imageAlt='Image of Pardo E72 interior'
       />
@@ -141,12 +150,51 @@ const product = {
     </Slideshow>
   </Section>
   <Section id='technical-specifications' marginHorizontal>
-    <h2 class='text-center'>Scheda tecnica</h2>
-    <div class='grid grid-cols-2 gap-8 lg:grid-cols-3'>
-      <div class='col-span-2'>
-        <!-- Scheda tecnica -->
+    <a href='#technical-specifications'>
+      <h2 class='text-center'>Scheda tecnica</h2>
+    </a>
+    <div class='relative grid grid-cols-2 gap-8 lg:grid-cols-3'>
+      <div class='col-span-2 flex flex-col gap-y-4 lg:gap-y-6'>
+        <TechnicalData
+          title='Dettagli del progetto'
+          rows={[
+            { label: 'Design interno', value: 'BurdissoCapponi Yachts&Design' },
+            { label: 'Design esterno', value: 'Cantiere del Pardo' },
+            { label: 'Architettura navale', value: 'Davide Leone Yachts Design' },
+            { label: 'Concetto', value: 'Cantiere del Pardo' },
+          ]}
+        />
+        <TechnicalData
+          title='Informazioni generali'
+          rows={[
+            {
+              label: 'Layout standard',
+              value: "Galley Up - 4 cabine, 5 bagni (1 membro dell'equipaggio)",
+            },
+            { label: 'Posti letto', value: "8 (più 2 membri dell'equipaggio)" },
+            { label: 'Persone imbarcabili', value: 'B16 / C20' },
+          ]}
+        />
+        <TechnicalData
+          title='Dimensioni'
+          rows={[
+            { label: 'Lunghezza massima', value: '22 m | 72.20 ft' },
+            { label: 'Larghezza massima', value: '20.83 m | 60.34 ft' },
+            { label: 'Dislocamento', value: '50 t | 110231 lb' },
+            { label: 'Fascio massimo', value: '5.66 m | 18.6 ft' },
+          ]}
+        />
+        <TechnicalData
+          title='Autonomia'
+          rows={[
+            { label: 'Serbatoio carburante', value: '6000 l | 1585 gal' },
+            { label: 'Serbatoio acqua', value: '1200 l | 317 gal' },
+            { label: 'Motori standard', value: '2x Volvo D13 IPS 1050' },
+            { label: 'Motori opzionali', value: '2x Volvo D13 IPS 1350' },
+          ]}
+        />
       </div>
-      <div class='hidden lg:block'>
+      <div class='hidden lg:sticky lg:top-28 lg:block lg:self-start'>
         <Image
           src='https://pardoyachts.com/cdn/shop/files/PardoYacht_PardoModel_E72_exterior_desktop_001_b.jpg?v=1737108915'
           alt='Pardo E72 Technical'

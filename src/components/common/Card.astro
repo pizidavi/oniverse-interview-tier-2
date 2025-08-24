@@ -10,7 +10,7 @@ type Props = {
   class?: string;
 };
 
-const { title, description, image, imageAlt, class: className = '' } = Astro.props;
+const { title, description, image, imageAlt, class: className } = Astro.props;
 ---
 
 <div
@@ -35,7 +35,7 @@ const { title, description, image, imageAlt, class: className = '' } = Astro.pro
         />
         <div
           class='pointer-events-none absolute inset-0 z-10'
-          style='background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 40%);'
+          style='background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0) 100%);'
         />
       </div>
     )

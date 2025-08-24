@@ -1,0 +1,29 @@
+---
+type Item = {
+  label: string;
+  value: string;
+};
+
+type Props = {
+  title: string;
+  rows: Item[];
+};
+
+const { title, rows } = Astro.props;
+---
+
+<div class='bg-primary/5 flex flex-col gap-y-2 rounded p-4 lg:gap-y-4 lg:p-6'>
+  <h4 class='text-center'>{title}</h4>
+  <div class='flex flex-col gap-y-2 lg:gap-y-4'>
+    {
+      rows.map(row => (
+        <div class='bg-background gap-y-2 rounded p-2 lg:p-4'>
+          <div class='flex flex-row items-center justify-between gap-2'>
+            <h5>{row.label}</h5>
+            <p class='text-right'>{row.value}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
